@@ -7,7 +7,12 @@ var ThunkableWebviewExtension = {
     }
   },
   receiveMessage: function(fxn) {
-    document.addEventListener("message", fxn, false);
-    window.addEventListener("message", fxn, false);
+    var callbackFunction = function(event) {
+      if (typeof fxn === 'function') {
+        fxn(event.data)
+      }
+    };
+    document.addEventListener('message', callbackFunction, false);
+    window.addEventListener('message', callbackFunction, false);
   }
 }
