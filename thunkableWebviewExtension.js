@@ -3,7 +3,7 @@ var ThunkableWebviewExtension = {
     if (window.ReactNativeWebView) {
       window.ReactNativeWebView.postMessage(message);
     } else {
-      window.parent.postMessage(message);
+      window.parent.postMessage(message, '*');
     }
   },
   receiveMessage: function(fxn) {
