@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://thunkable.github.io/webview-extension/thunkableWebviewExtension.js" type="text/javascript"></script>
+    <script src="https://thunkable.github.io/webviewer-extension/thunkableWebviewerExtension.js" type="text/javascript"></script>
   </head>
   <body>
     <span id="messageDisplay"></span>
@@ -11,11 +11,11 @@
   <script type="text/javascript">
     // when the button is clicked, send a message to the app
     document.getElementById('messageButton').onclick = function() {
-      ThunkableWebviewExtension.postMessage('hello world');
+      ThunkableWebviewerExtension.postMessage('hello world');
     }
 
     // when we get a message from the app, display it on the page
-    ThunkableWebviewExtension.receiveMessage(function(message) {
+    ThunkableWebviewerExtension.receiveMessage(function(message) {
       document.getElementById('messageDisplay').innerHTML = message;
     });
   </script>
