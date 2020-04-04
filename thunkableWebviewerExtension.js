@@ -1,4 +1,4 @@
-var ThunkableWebviewExtension = {
+var ThunkableWebviewerExtension = {
   postMessage: function (message) {
     if (window.ReactNativeWebView) {
       window.ReactNativeWebView.postMessage(message);
