@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://thunkable.github.io/webviewer-extension/thunkableWebviewerExtension.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/c3@0.7.15/c3.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/c3@0.7.15/c3.min.js"></script>
+  </head>
+  <body>
+    <div id="chart"></div>
+    <script>
+    var chart = c3.generate({
+      bindto: '#chart',
+      data: {
+        columns: [
+          ['data1'],
+        ]
+      }
+    });
+
+    // when we get a message from the app, display it on the page
+    // message should be a JSON string of a list of numbers
+    ThunkableWebviewerExtension.receiveMessage(function(message) {
+      try {
+        var messageList = JSON.parse(message);
+        chart.load({
+          columns: [
+            ['data1'].concat(messageList),
+          ]
+        });        
+      } catch (e) {
+        console.error("An error occurred. Message probably wasn't a JSON string of an array of numbers");
+      }
+    });
+    </script>
+  </body>
+</html>
