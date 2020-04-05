@@ -2,13 +2,17 @@
 
 Send a message between your Thunkable app and your website in a Web Viewer.
 
-## Example
+## Examples
 
-### Project
-https://x.thunkable.com/copy/dd67901c580dc50f5661203c8edfd015
+### Basic message passing
+Project: https://x.thunkable.com/copy/dd67901c580dc50f5661203c8edfd015
 
-### Website code
-https://github.com/thunkable/webviewer-extension/blob/master/examples/simple.html
+Website code: https://github.com/thunkable/webviewer-extension/blob/master/examples/simple.html
+
+### Simple graph
+Project: https://x.thunkable.com/copy/60e6376165b009edfcd66bedaa7813c8
+
+Website code: https://github.com/thunkable/webviewer-extension/blob/master/examples/graph.html
 
 ## Setup
 
