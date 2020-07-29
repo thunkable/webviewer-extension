@@ -5,12 +5,12 @@ Send a message between your Thunkable app and your website in a Web Viewer.
 ## Examples
 
 ### Basic message passing
-Project: https://x.thunkable.com/copy/dd67901c580dc50f5661203c8edfd015
+Project: https://x.thunkable.com/copy/a6e6cfdda04d2cd1309dacc794a99dc1
 
 Website code: https://github.com/thunkable/webviewer-extension/blob/master/examples/simple.html
 
 ### Simple graph
-Project: https://x.thunkable.com/copy/60e6376165b009edfcd66bedaa7813c8
+Project: https://x.thunkable.com/copy/67cc23c4c4941012b5947e479037eba5
 
 Website code: https://github.com/thunkable/webviewer-extension/blob/master/examples/graph.html
 
