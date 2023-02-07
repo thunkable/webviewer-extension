@@ -13,7 +13,7 @@
       bindto: '#chart',
       data: {
         columns: [
-          ['data1'],
+          ['censor data'],
         ]
       }
     });
@@ -25,7 +25,7 @@
         var messageList = JSON.parse(message);
         chart.load({
           columns: [
-            ['data1'].concat(messageList),
+            ['censor data'].concat(messageList),
           ]
         });        
       } catch (e) {
