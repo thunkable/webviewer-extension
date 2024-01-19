@@ -6,11 +6,14 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/c3@0.7.15/c3.min.js"></script>
   </head>
-  <body>
+  <body style="margin: 0px;">
     <div id="chart"></div>
+
     <script>
+    document.getElementById('chart').style.height = window.innerHeight;
     var chart = c3.generate({
       bindto: '#chart',
+      height: window.innerHeight,
       data: {
         columns: [
           ['data1'],
