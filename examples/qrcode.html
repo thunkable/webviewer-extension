@@ -14,6 +14,7 @@
       // and provide it as options for the qr code library
       ThunkableWebviewerExtension.receiveMessage(function(message) {
         try {
+          document.getElementById("qrcode").innerHTML = '';
           const qrCodeOptions = JSON.parse(message);
           new QRCode(document.getElementById("qrcode"), {
             ...qrCodeOptions,
