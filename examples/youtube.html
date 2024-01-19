@@ -63,6 +63,10 @@
             if (player) {
               player.playVideo();
             }
+          } else if (msgFromApp.type === "pause") {
+            if (player) {
+              player.pauseVideo();
+            }
           } else if (msgFromApp.type === "stop") {
             if (player) {
               player.stopVideo();
