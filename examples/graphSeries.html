@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://thunkable.github.io/webviewer-extension/thunkableWebviewerExtension.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/c3@0.7.15/c3.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/c3@0.7.15/c3.min.js"></script>
+  </head>
+  <body style="margin: 0px;">
+    <div id="chart"></div>
+
+    <script>
+    document.getElementById('chart').style.height = window.innerHeight;
+    var chart = c3.generate({
+      bindto: '#chart',
+      height: window.innerHeight,
+      data: {
+        x: 'x',
+        columns: [],
+      }
+    });
+
+    // when we get a message from the app, parse it
+    // and then do the action specified by the type
+    ThunkableWebviewerExtension.receiveMessage(function(message) {
+      try {
+        const msgFromApp = JSON.parse(message);
+        // {type: "loadSeries", seriesData: [{name: "series1", data: [1,2,3,4,5]}]}
+        if (msgFromApp.type === "loadSeries") {
+          const columnData = msgFromApp.seriesData.reduce((accumulator, series) => {
+            accumulator.push([series.name].concat(series.data));
+            return accumulator;
+          }, []);
+          chart.load({
+            columns: [
+              // format: ['series1'].concat([1,2,3])
+              ...columnData
+            ]
+          });
+        } else if (msgFromApp.type === "clearGraph") {
+          chart.unload();
+        }
+        
+      } catch (e) {
+        console.error("An error occurred. Message probably wasn't valid JSON string");
+      }
+    });
+    </script>
+  </body>
+</html>
