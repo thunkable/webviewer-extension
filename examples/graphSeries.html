@@ -17,7 +17,15 @@
       data: {
         x: 'x',
         columns: [],
-      }
+      },
+      axis: {
+        x: {
+            type: 'timeseries',
+            tick: {
+              format: '%a %I %p'
+            }
+        }
+    }
     });
 
     // when we get a message from the app, parse it
